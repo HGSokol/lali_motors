@@ -1,0 +1,145 @@
+@use "color.scss" as *;
+@font-face {
+  font-family: "Inter";
+  src: url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+}
+
+@mixin fontConstructor(
+  $size: 1,
+  $weight: 400,
+  $color: #262626,
+  $line_height: 100%
+) {
+  font-family: "Inter", sans-serif;
+  color: $color;
+  font-size: $size + em;
+  font-weight: $weight;
+  font-style: normal;
+  font-optical-sizing: auto;
+  font-variation-settings: "slnt" 0, "CRSV" 0, "SHRP" 0;
+  line-height: $line_height;
+}
+
+@mixin h1($color: $gray_450) {
+  @include fontConstructor(6.125, 500, $color);
+  line-height: 119px;
+  letter-spacing: -6.5px;
+}
+
+@mixin h2($color: $gray_450) {
+  @include fontConstructor(4.75, 500, $color);
+  line-height: 92px;
+  letter-spacing: -4.25px;
+}
+@mixin h2_tablet($color: $gray_450) {
+  @include fontConstructor(4.25, 500, $color);
+  line-height: 82px;
+  letter-spacing: -4px;
+}
+@mixin h2_mobile($color: $gray_450) {
+  @include fontConstructor(3.5, 500, $color);
+  line-height: 63px;
+  letter-spacing: -3.5px;
+}
+
+@mixin h3($color: $gray_450) {
+  @include fontConstructor(3, 400, $color);
+  line-height: 55.2px;
+  letter-spacing: -3.12px;
+}
+@mixin h3_mobile($color: $gray_450) {
+  @include fontConstructor(3, 500, $color);
+  line-height: 55.2px;
+  letter-spacing: -3.12px;
+}
+
+@mixin h4($color: $gray_450) {
+  @include fontConstructor(2.125, 500, $color);
+  line-height: 41px;
+  letter-spacing: -1.76px;
+}
+
+@mixin h5_meduim($color: $gray_450) {
+  @include fontConstructor(1.875, 500, $color);
+  line-height: 38.4px;
+  letter-spacing: -1.76px;
+}
+@mixin h5_regular($color: $gray_450) {
+  @include fontConstructor(1.875, 400, $color);
+  line-height: 38.4px;
+  letter-spacing: -1.76px;
+}
+
+@mixin h6($color: $gray_450) {
+  @include fontConstructor(1.75, 400, $color);
+  line-height: 34px;
+  letter-spacing: -1.76px;
+}
+
+@mixin h7($color: $gray_450) {
+  @include fontConstructor(1.625, 400, $color);
+  line-height: 31px;
+  letter-spacing: -1.76px;
+}
+
+@mixin h8_medium($color: $gray_450) {
+  @include fontConstructor(1.5, 500, $color);
+  line-height: 27px;
+  letter-spacing: -0.8px;
+}
+@mixin h8_regular($color: $gray_450) {
+  @include fontConstructor(1.5, 400, $color);
+  line-height: 27px;
+  letter-spacing: -0.8px;
+}
+
+@mixin text_l($color: $gray_450) {
+  @include fontConstructor(1.25, 500, $color);
+  line-height: 27px;
+  letter-spacing: -0.8px;
+}
+
+@mixin text_m_semibold($color: $gray_450) {
+  @include fontConstructor(1.125, 600, $color);
+  line-height: 27px;
+  letter-spacing: -0.8px;
+}
+@mixin text_m_medium($color: $gray_450) {
+  @include fontConstructor(1.125, 500, $color);
+  line-height: 27px;
+  letter-spacing: -0.8px;
+}
+@mixin text_m_regular($color: $gray_450) {
+  @include fontConstructor(1.125, 400, $color);
+  line-height: 27px;
+  letter-spacing: -0.8px;
+}
+
+@mixin text_s($color: $gray_450) {
+  @include fontConstructor(1, 500, $color);
+  line-height: 25.2px;
+  letter-spacing: -0.54px;
+}
+
+@mixin text_s_mobile_medium($color: $gray_450) {
+  @include fontConstructor(1.0625, 500, $color);
+  line-height: 23.8px;
+  letter-spacing: -0.43px;
+}
+@mixin text_s_mobile_regular($color: $gray_450) {
+  @include fontConstructor(1.0625, 400, $color);
+  line-height: 23.8px;
+  letter-spacing: -0.43px;
+}
+
+@mixin text_xs_mobile($color: $gray_450) {
+  @include fontConstructor(0.875, 400, $color);
+  line-height: 25.2px;
+  letter-spacing: -0.54px;
+}
+
+@mixin label($color: $gray_450) {
+  @include fontConstructor(1, 400, $color);
+  line-height: 25.2px;
+  letter-spacing: -0.54px;
+}

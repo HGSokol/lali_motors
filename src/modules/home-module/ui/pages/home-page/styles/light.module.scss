@@ -1,0 +1,7 @@
+@use "/src/common/styles/index.scss" as *;
+
+.homeWrapper {
+  @include backgroundGray;
+
+  @include sectionStyles;
+}

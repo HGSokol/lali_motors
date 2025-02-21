@@ -1,0 +1,17 @@
+@use "color.scss" as *;
+
+@mixin backgroundBlack() {
+  background-color: $gray_450;
+}
+
+@mixin backgroundSlate() {
+  background-color: $gray_400;
+}
+
+@mixin backgroundGray() {
+  background-color: $gray_350;
+}
+
+@mixin backgroundWhite() {
+  background-color: $gray_50;
+}
