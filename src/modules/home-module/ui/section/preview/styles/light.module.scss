@@ -1,0 +1,165 @@
+@use "/src/common/styles/index.scss" as *;
+
+.preview {
+  @include backgroundBlack;
+  height: 920px;
+  background-size: cover;
+  background-position: right;
+  background-repeat: no-repeat;
+  @include flexColumnConstructor(center, start);
+  @include sectionStyles;
+
+  @include xl {
+    background-size: cover;
+    height: 920px;
+    background-position: 400px 80px;
+  }
+
+  @include lg {
+    height: 720px;
+    background-position: 200px 40px;
+  }
+  @include md {
+    height: 686px;
+    background-position: 0 0;
+  }
+
+  @include xs {
+    height: 606px;
+    background-size: 1500px;
+    background-position: -300px -100px;
+  }
+
+  .sectionContainer {
+    @include flexColumnConstructor(start, space-between);
+    height: 100%;
+    padding-block: 80px;
+
+    .titleContainer {
+      position: relative;
+      max-width: 680px;
+
+      & > * {
+        z-index: 10;
+        display: block;
+        @include h1($gray_0);
+        text-transform: uppercase;
+
+        @include md {
+          @include h2($gray_0);
+        }
+
+        @include s {
+          @include h3($gray_0);
+        }
+      }
+
+      & :nth-child(2) {
+        background: linear-gradient(
+          180deg,
+          #fdcf6a 0%,
+          #fdd67c 50%,
+          #ffe5af 100%
+        );
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+
+      .flame1,
+      .flame2,
+      .flame3,
+      .flame4,
+      .flame5,
+      .flame6,
+      .flame7 {
+        z-index: 1;
+        mix-blend-mode: color-dodge;
+        position: absolute;
+      }
+      .flame1 {
+        top: 68px;
+        right: 100px;
+      }
+      .flame2 {
+        top: 109px;
+        right: 184px;
+      }
+      .flame3 {
+        top: 68px;
+        right: 282px;
+      }
+      .flame4 {
+        top: 67px;
+        right: 341px;
+      }
+      .flame5 {
+        top: 104px;
+        right: 430px;
+      }
+      .flame6 {
+        top: 79px;
+        right: 595px;
+      }
+      .flame7 {
+        top: 63px;
+        right: 595px;
+      }
+    }
+
+    .infoContainer {
+      @include flexColumnConstructor(end, end);
+      width: 100%;
+
+      .infoWrapper {
+        @include flexColumnConstructor(start, start, 2.25rem);
+        width: 100%;
+        width: 630px;
+
+        @include lg {
+          width: 615px;
+        }
+        @include md {
+          width: 418px;
+        }
+        @include s {
+          width: 100%;
+        }
+
+        .infoTitle {
+          @include text_l($gray_0);
+
+          @include md {
+            @include text_m_regular($gray_0);
+          }
+        }
+
+        .infoLinks {
+          @include flexRowConstructor(start, start, 2rem);
+
+          @include s {
+            flex-direction: column;
+            gap: 0.5rem;
+          }
+
+          .infoLinksContainer {
+            @include flexRowConstructor(end, end, 0.5rem);
+
+            .infoLinksTitle {
+              @include text_l($gray_0);
+
+              @include md {
+                @include text_m_regular($gray_0);
+              }
+            }
+
+            .infoLinksDescription {
+              @include label($gray_0);
+              font-size: 0.75rem;
+            }
+          }
+        }
+      }
+    }
+  }
+}

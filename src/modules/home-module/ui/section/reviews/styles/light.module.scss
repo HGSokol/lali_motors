@@ -1,0 +1,52 @@
+@use "/src/common/styles/index.scss" as *;
+
+.reviews {
+  @include backgroundBlack;
+  @include flexColumnConstructor(center, start);
+  @include sectionStyles;
+
+  .sectionContainer {
+    @include flexColumnConstructor(start, start, 1rem);
+    padding-block: 120px;
+
+    @include lg {
+      padding-block: 80px;
+    }
+    @include md {
+      padding-block: 60px;
+    }
+    @include xs {
+      padding-block: 24px;
+    }
+
+    .title {
+      @include text_m_regular($goldich);
+      background: linear-gradient(
+        180deg,
+        #fdcf6a 0%,
+        #fdd67c 50%,
+        #ffe5af 100%
+      );
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+
+      @include md {
+        @include text_s_mobile_regular($goldich);
+      }
+      @include xs {
+        @include text_s($goldich);
+      }
+    }
+
+    .cardContainer {
+      @include flexRowConstructor(start, start);
+      position: relative;
+
+      @include md {
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+    }
+  }
+}

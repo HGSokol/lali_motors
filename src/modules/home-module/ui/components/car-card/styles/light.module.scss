@@ -1,0 +1,82 @@
+@use "/src/common/styles/index.scss" as *;
+
+.cardWrapper {
+  @include flexColumnConstructor(start, start, 1.125rem);
+  width: 100%;
+  cursor: pointer;
+
+  &:hover {
+    .infoWrapper .titleInfo .link {
+      opacity: 1;
+    }
+  }
+
+  .photoWrapper {
+    width: 100%;
+    height: 374px;
+
+    padding: 0.5rem 1rem;
+
+    .available {
+      @include text_s($gray_0);
+    }
+
+    .unavailable {
+      @include text_s($gray_200);
+    }
+  }
+
+  .infoWrapper {
+    width: 100%;
+    @include flexColumnConstructor(start, start);
+
+    .titleInfo {
+      @include flexColumnConstructor(start, start);
+      position: relative;
+      border-bottom: 1px solid $gray_100;
+      width: 100%;
+      padding-bottom: 0.75rem;
+
+      & :nth-child(1) {
+        @include h4($gray_450);
+      }
+      & :nth-child(2) {
+        @include h6($gray_450);
+      }
+
+      .link {
+        opacity: 0;
+        transition-duration: 300ms;
+        @include flexColumnConstructor(center, center);
+        position: absolute;
+        top: 0;
+        right: 0;
+
+        border-radius: 100%;
+        min-width: 46px;
+        width: 46px;
+        min-height: 46px;
+        height: 46px;
+        background: $gray_450;
+      }
+    }
+
+    .descriptionWrapper {
+      @include flexRowConstructor(start, start);
+      width: 100%;
+
+      .leftInfo {
+        @include flexColumnConstructor(start, start, 0.25rem);
+        width: 150px;
+        border-right: 1px solid $gray_100;
+        padding: 0.75rem 1.5rem 0rem 0rem;
+      }
+
+      .rightInfo {
+        @include flexColumnConstructor(start, start, 0.25rem);
+        width: 100%;
+        padding: 0.75rem 0rem 0rem 1.5rem;
+      }
+    }
+  }
+}

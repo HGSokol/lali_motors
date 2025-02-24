@@ -1,0 +1,74 @@
+@use "/src/common/styles/index.scss" as *;
+
+.cardWrapper {
+  @include flexColumnConstructor(start, space-between);
+  @include backgroundSlate;
+  width: 100%;
+  max-width: 375px;
+  max-height: 590px;
+  height: 590px;
+
+  border: 1px solid $gray_350;
+  border-radius: 4px;
+  padding: 32px;
+
+  .cardImage {
+    width: 100%;
+    aspect-ratio: 1/0.6591;
+  }
+
+  .infoWrapper {
+    @include flexColumnConstructor(start, start, 1.125rem);
+
+    .infoDescription {
+      @include flexColumnConstructor(start, start, 1rem);
+
+      .title {
+        & :nth-child(1) {
+          @include h6($gray_0);
+          white-space: pre-wrap;
+        }
+      }
+      .altTitle {
+        position: relative;
+        cursor: pointer;
+        @include flexRowConstructor(start, start, 0.5rem);
+
+        color: $goldich;
+        background: linear-gradient(
+          180deg,
+          #fdcf6a 0%,
+          #fdd67c 50%,
+          #ffe5af 100%
+        );
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+
+        & ::after {
+          content: "";
+          position: absolute;
+          bottom: -5px;
+          left: 0;
+
+          background: linear-gradient(
+            180deg,
+            #fdcf6a 0%,
+            #fdd67c 50%,
+            #ffe5af 100%
+          );
+          height: 1px;
+          width: 100%;
+        }
+      }
+
+      .comment {
+        @include text_l($gray_150);
+      }
+    }
+
+    .user {
+      @include text_m_regular($gray_150);
+    }
+  }
+}

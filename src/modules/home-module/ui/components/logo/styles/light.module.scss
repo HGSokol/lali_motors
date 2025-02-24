@@ -1,0 +1,13 @@
+@use "/src/common/styles/index.scss" as *;
+
+.logoWrapper {
+  @include flexRowConstructor(center, center, 0.5rem);
+
+  .logoImg {
+    width: 100%;
+  }
+
+  .logoText {
+    @include text_m_medium($gray_0);
+  }
+}

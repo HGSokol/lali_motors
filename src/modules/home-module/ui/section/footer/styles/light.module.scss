@@ -1,0 +1,99 @@
+@use "/src/common/styles/index.scss" as *;
+
+.reviews {
+  @include backgroundBlack;
+  @include flexColumnConstructor(center, start);
+  border-top: 1px solid $gray_350;
+  @include sectionStyles;
+
+  .sectionContainer {
+    @include flexRowConstructor(stretch, stretch);
+    padding-block: 50px;
+
+    @include xmd {
+      flex-direction: column;
+      gap: 2rem;
+    }
+
+    .linkContainer {
+      @include flexColumnConstructor(start, start, 3.25rem);
+
+      .pageLinkWrapper {
+        @include flexRowConstructor(start, start, 0.625rem);
+
+        @include s {
+          flex-wrap: wrap;
+        }
+
+        .link {
+          list-style: none;
+
+          & :nth-child(1) {
+            @include text_m_regular($gray_100);
+            cursor: pointer;
+            text-decoration: none;
+            padding-right: 0.625rem;
+          }
+          & :nth-child(2) {
+            @include text_m_regular($gray_250);
+            font-size: 0.9em;
+          }
+        }
+      }
+
+      .linkPolicy {
+        cursor: pointer;
+        @include text_m_regular($gray_100);
+
+        @include s {
+          display: none;
+        }
+      }
+    }
+
+    .contactInfoBlock {
+      @include flexColumnConstructor(start, end, 2rem);
+      position: relative;
+      bottom: 0;
+
+      .infoBlock {
+        @include flexColumnConstructor(start, end);
+
+        & :nth-child(1) {
+          @include label($gray_250);
+          font-size: 0.75em;
+          text-transform: uppercase;
+        }
+        & :nth-child(2) {
+          @include flexRowConstructor(start, start, 1rem);
+          @include label($gray_100);
+
+          & > div {
+            cursor: pointer;
+          }
+        }
+      }
+    }
+
+    .inc {
+      @include flexColumnConstructor(start, end);
+
+      @include s {
+        gap: 0.5rem;
+      }
+
+      & :nth-child(1) {
+        display: none;
+        @include text_m_regular($gray_100);
+
+        @include s {
+          display: block;
+        }
+      }
+
+      & :nth-child(2) {
+        @include text_m_regular($gray_250);
+      }
+    }
+  }
+}
