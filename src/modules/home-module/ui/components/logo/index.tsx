@@ -1,7 +1,6 @@
 import { FC } from "react";
 
 import LogoIMG from "~/common/assets/logo.png";
-
 import style from "./styles/light.module.scss";
 
 interface Logo {

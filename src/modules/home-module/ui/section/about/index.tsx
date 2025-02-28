@@ -1,6 +1,5 @@
 import BackgroundImg from "~/common/assets/about-car.webp";
 import LogoIMG from "~/common/assets/logo.png";
-
 import style from "./styles/light.module.scss";
 
 const About = () => {

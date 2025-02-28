@@ -1,8 +1,9 @@
 import { FC } from "react";
 
+import Arrow from "~/common/icons/arrow";
+
 import defaultCardImg from "~/common/assets/default-card.png";
 import style from "./styles/light.module.scss";
-import Arrow from "~/common/icons/arrow";
 
 interface ICarCard {
   brand: string;

@@ -1,11 +1,5 @@
 import type { FC } from "react";
-
-export interface IIcon {
-  width?: number;
-  height?: number;
-  color?: string;
-  className?: string;
-}
+import { IIcon } from "~/common/types/icon";
 
 const ArrowDown: FC<IIcon> = ({ width = 28, height = 28, className }) => {
   return (
@@ -30,9 +24,9 @@ const ArrowDown: FC<IIcon> = ({ width = 28, height = 28, className }) => {
           y2="13.5"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#FDCF6A" />
-          <stop offset="0.5" stop-color="#FDD67C" />
-          <stop offset="1" stop-color="#FFE5AF" />
+          <stop stopColor="#FDCF6A" />
+          <stop offset="0.5" stopColor="#FDD67C" />
+          <stop offset="1" stopColor="#FFE5AF" />
         </linearGradient>
       </defs>
     </svg>

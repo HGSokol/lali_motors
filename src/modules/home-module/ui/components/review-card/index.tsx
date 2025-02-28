@@ -1,8 +1,10 @@
 import { FC } from "react";
 
+import ArrowRight from "~/common/icons/arrow-right";
+import Flame from "~/common/icons/flame";
+
 import defaultCardImg from "~/common/assets/default-card.png";
 import style from "./styles/light.module.scss";
-import ArrowRight from "~/common/icons/arrow-right";
 
 interface IReviewCard {
   image: string;
@@ -38,6 +40,19 @@ const ReviewCard: FC<IReviewCard> = ({
           <div className={`${style.title} ${alt ? style.altTitle : ""}`}>
             <span>{title}</span>
             {alt && <ArrowRight />}
+            {alt && (
+              <>
+                <div className={style.flame1}>
+                  <Flame width={30} />
+                </div>
+                <div className={style.flame2}>
+                  <Flame width={30} />
+                </div>
+                <div className={style.flame3}>
+                  <Flame width={30} />
+                </div>
+              </>
+            )}
           </div>
           <span className={style.comment}>{comment}</span>
         </div>

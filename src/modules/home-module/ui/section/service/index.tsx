@@ -1,8 +1,13 @@
-import carDefault from "~/common/assets/default-card.png";
-
-import style from "./styles/light.module.scss";
 import { useState } from "react";
+
 import ArrowRight from "~/common/icons/arrow-right";
+import Flame from "~/common/icons/flame";
+
+import CarImg1 from "~/common/assets/car_1.webp";
+import CarImg2 from "~/common/assets/car_2.webp";
+import CarImg3 from "~/common/assets/car_3.webp";
+import CarImg4 from "~/common/assets/car_4.webp";
+import style from "./styles/light.module.scss";
 
 const tableData = [
   {
@@ -33,16 +38,16 @@ const tableData = [
 
 const carData = [
   {
-    url: carDefault,
+    url: CarImg1,
   },
   {
-    url: carDefault,
+    url: CarImg2,
   },
   {
-    url: carDefault,
+    url: CarImg3,
   },
   {
-    url: carDefault,
+    url: CarImg4,
   },
 ];
 
@@ -54,6 +59,15 @@ const Service = () => {
         <div className={style.titleContainer}>
           <span>[ Наши автомобили ]</span>
           <span>Наши услуги</span>
+          <div className={style.flame1}>
+            <Flame width={65} opacity={0.8} />
+          </div>
+          <div className={style.flame2}>
+            <Flame width={65} opacity={0.8} />
+          </div>
+          <div className={style.flame3}>
+            <Flame width={65} opacity={0.8} />
+          </div>
         </div>
         <div className={style.serviceContainer}>
           <div className={style.serviceTable}>
@@ -110,8 +124,17 @@ const Service = () => {
               })}
             </div>
             <div className={style.serviceButton}>
-              <span>Оставить заявку</span>
+              <a href="#Оставить заявку">Оставить заявку</a>
               <ArrowRight />
+              <div className={style.flame1}>
+                <Flame width={15} />
+              </div>
+              <div className={style.flame2}>
+                <Flame width={15} />
+              </div>
+              <div className={style.flame3}>
+                <Flame width={15} />
+              </div>
             </div>
           </div>
         </div>

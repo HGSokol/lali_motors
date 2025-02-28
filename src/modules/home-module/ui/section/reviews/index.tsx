@@ -1,6 +1,6 @@
-import ReviewCard from "../../components/review-card";
-import image from "~/common/assets/default-card.png";
+import ReviewCard from "~/modules/home-module/ui/components/review-card";
 
+import image from "~/common/assets/default-card.png";
 import style from "./styles/light.module.scss";
 
 const cardData = [
@@ -51,6 +51,7 @@ const Reviews = () => {
           {cardData.map((e, i) => {
             return (
               <ReviewCard
+                key={i}
                 zIndex={e.zIndex}
                 rotate={e.rotate}
                 image={e.image}
@@ -61,6 +62,17 @@ const Reviews = () => {
               />
             );
           })}
+          {/* <>
+            <div className={style.flame1}>
+              <Star width={29} />
+            </div>
+            <div className={style.flame2}>
+              <Star width={29} />
+            </div>
+            <div className={style.flame3}>
+              <Star width={29} />
+            </div>
+          </> */}
         </div>
       </div>
     </div>

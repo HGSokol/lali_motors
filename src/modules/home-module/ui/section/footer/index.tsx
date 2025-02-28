@@ -1,8 +1,7 @@
-import Logo from "../../components/logo";
+import Logo from "~/modules/home-module/ui/components/logo";
 
 import insta from "~/common/assets/instagram_3D.png";
 import whatsapp from "~/common/assets/whatsapp_3D.png";
-
 import style from "./styles/light.module.scss";
 
 const linkData = ["Главная", "Услуги", "Каталог", "Вопросы", "Контакты"];

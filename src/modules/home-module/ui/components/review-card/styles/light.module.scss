@@ -12,6 +12,18 @@
   border-radius: 4px;
   padding: 32px;
 
+  @include md {
+    padding: 24px;
+
+    max-height: 520px;
+    height: 520px;
+  }
+
+  @include xmd {
+    gap: 30px;
+    height: auto;
+  }
+
   .cardImage {
     width: 100%;
     aspect-ratio: 1/0.6591;
@@ -27,6 +39,13 @@
         & :nth-child(1) {
           @include h6($gray_0);
           white-space: pre-wrap;
+
+          @include md {
+            @include h7($gray_0);
+          }
+          @include xs {
+            @include h8_regular($gray_0);
+          }
         }
       }
       .altTitle {
@@ -45,7 +64,7 @@
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
 
-        & ::after {
+        & :nth-child(1):after {
           content: "";
           position: absolute;
           bottom: -5px;
@@ -64,11 +83,48 @@
 
       .comment {
         @include text_l($gray_150);
+
+        @include md {
+          @include text_m_regular($gray_150);
+        }
+        @include xs {
+          @include text_s_mobile_regular($gray_0);
+        }
+      }
+
+      .flame1,
+      .flame2,
+      .flame3 {
+        position: absolute;
+      }
+      .flame1 {
+        top: -12px;
+        right: 3px;
+      }
+      .flame2 {
+        top: -2px;
+        right: 26px;
+      }
+      .flame3 {
+        top: -7px;
+        right: 187px;
+
+        @include md {
+          top: -7px;
+          right: 182px;
+        }
       }
     }
 
     .user {
-      @include text_m_regular($gray_150);
+      @include text_l($gray_150);
+
+      @include md {
+        @include text_m_regular($gray_150);
+      }
+      @include xs {
+        @include text_s_mobile_regular($gray_0);
+      }
     }
   }
 }

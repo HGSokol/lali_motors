@@ -1,11 +1,5 @@
 import type { FC } from "react";
-
-export interface IIcon {
-  width?: number;
-  height?: number;
-  color?: string;
-  className?: string;
-}
+import { IIcon } from "~/common/types/icon";
 
 const Arrow: FC<IIcon> = ({ width = 12, height = 12, className }) => {
   return (
@@ -20,7 +14,7 @@ const Arrow: FC<IIcon> = ({ width = 12, height = 12, className }) => {
       <path
         d="M1.05018 10.9468L10.9497 1.04733M10.9497 1.04733L2.46439 1.04733M10.9497 1.04733L10.9497 9.53261"
         stroke="white"
-        stroke-width="1.5"
+        strokeWidth="1.5"
       />
     </svg>
   );

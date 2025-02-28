@@ -21,6 +21,7 @@
 
     .titleContainer {
       @include flexColumnConstructor(start, center, 1.5rem);
+      position: relative;
 
       & :nth-child(1) {
         @include text_m_regular($gray_150);
@@ -49,7 +50,53 @@
           @include h2_tablet($gray_150);
         }
         @include s {
+          max-width: 223px;
           @include h2_mobile($gray_150);
+        }
+      }
+
+      .flame1,
+      .flame2,
+      .flame3 {
+        position: absolute;
+      }
+      .flame1 {
+        top: 39px;
+        right: -29px;
+
+        @include md {
+          top: 33px;
+          right: -27px;
+        }
+        @include s {
+          top: 33px;
+          right: 157px;
+        }
+      }
+      .flame2 {
+        top: 85px;
+        right: 220px;
+
+        @include md {
+          top: 75px;
+          right: 143px;
+        }
+        @include s {
+          top: 125px;
+          right: 173px;
+        }
+      }
+      .flame3 {
+        top: 39px;
+        right: 421px;
+
+        @include md {
+          top: 33px;
+          right: 370px;
+        }
+        @include s {
+          top: 92px;
+          right: -5px;
         }
       }
     }
@@ -148,7 +195,7 @@
           width: 277px;
 
           @include md {
-            width: 240px;
+            width: 290px;
           }
           @include xs {
             width: 100%;
@@ -171,7 +218,7 @@
               width: 277px;
 
               @include md {
-                width: 240px;
+                width: 320px;
               }
               @include xs {
                 width: 100%;
@@ -210,6 +257,39 @@
 
           @include md {
             position: relative;
+          }
+
+          .flame1,
+          .flame2,
+          .flame3 {
+            position: absolute;
+          }
+          .flame1 {
+            top: -9px;
+            right: 10px;
+
+            @include md {
+              top: -11px;
+              right: 10px;
+            }
+          }
+          .flame2 {
+            top: -6px;
+            right: 19px;
+
+            @include md {
+              top: -6px;
+              right: 20px;
+            }
+          }
+          .flame3 {
+            top: -11px;
+            right: 211px;
+
+            @include md {
+              top: -10px;
+              right: 206px;
+            }
           }
 
           &::after {

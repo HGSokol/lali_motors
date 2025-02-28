@@ -1,11 +1,5 @@
 import type { FC } from "react";
-
-export interface IIcon {
-  width?: number;
-  height?: number;
-  color?: string;
-  className?: string;
-}
+import { IIcon } from "~/common/types/icon";
 
 const ArrowLink: FC<IIcon> = ({ width = 12, height = 13, className }) => {
   return (

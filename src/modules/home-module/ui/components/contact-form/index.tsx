@@ -1,6 +1,7 @@
 import { useState } from "react";
 
 import ArrowRight from "~/common/icons/arrow-right";
+import Flame from "~/common/icons/flame";
 
 import style from "./styles/light.module.scss";
 
@@ -32,7 +33,11 @@ const ContactForm = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit} className={style.contactFormWrapper}>
+    <form
+      id="Оставить заявку"
+      onSubmit={handleSubmit}
+      className={style.contactFormWrapper}
+    >
       <input
         value={form.name}
         onChange={(e) => handleChange("name", e.target.value)}
@@ -54,6 +59,15 @@ const ContactForm = () => {
       <button type="submit" className={style.buttonForm}>
         <span>Оставить заявку</span>
         <ArrowRight />
+        <div className={style.flame1}>
+          <Flame width={15} opacity={0.8} />
+        </div>
+        <div className={style.flame2}>
+          <Flame width={15} opacity={0.8} />
+        </div>
+        <div className={style.flame3}>
+          <Flame width={15} opacity={0.8} />
+        </div>
       </button>
     </form>
   );

@@ -38,6 +38,9 @@
         }
       }
       & :nth-child(2) {
+        max-width: 470px;
+        position: relative;
+
         @include h2($goldich);
         text-transform: uppercase;
         background: linear-gradient(
@@ -55,9 +58,54 @@
         }
 
         @include s {
+          max-width: 310px;
           @include h2_mobile($goldich);
         }
+
+        .flame1,
+        .flame2,
+        .flame3 {
+          position: absolute;
+        }
+        .flame1 {
+          top: -124px;
+          right: 184px;
+
+          @include md {
+            top: -92px;
+            right: 470px;
+          }
+          @include s {
+            top: -56px;
+            right: 233px;
+          }
+        }
+        .flame2 {
+          top: -14px;
+          right: 375px;
+
+          @include md {
+          }
+          @include s {
+            top: -29px;
+            right: 109px;
+          }
+        }
+        .flame3 {
+          top: 79px;
+          right: 138px;
+
+          @include md {
+            top: 73px;
+            right: 259px;
+          }
+          @include s {
+            top: 43px;
+            right: 76px;
+          }
+        }
       }
+
       & :nth-child(3) {
         @include text_l($gray_150);
         max-width: 358px;

@@ -63,5 +63,23 @@
       height: 1px;
       width: 100%;
     }
+
+    .flame1,
+    .flame2,
+    .flame3 {
+      position: absolute;
+    }
+    .flame1 {
+      top: 34px;
+      right: 10px;
+    }
+    .flame2 {
+      top: 41px;
+      right: 40px;
+    }
+    .flame3 {
+      top: 36px;
+      right: 208px;
+    }
   }
 }
