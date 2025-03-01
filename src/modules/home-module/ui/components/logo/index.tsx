@@ -11,7 +11,12 @@ interface Logo {
 const Logo: FC<Logo> = ({ widthImg, textSize }) => {
   return (
     <div className={style.logoWrapper}>
-      <img src={LogoIMG} width={`${widthImg}px`} alt="Lali Motors Logo" />
+      <img
+        src={LogoIMG}
+        width={`${widthImg}px`}
+        alt="Lali Motors Logo"
+        loading="lazy"
+      />
       <span style={{ fontSize: `${textSize}px` }} className={style.logoText}>
         LALI MOTORS
       </span>

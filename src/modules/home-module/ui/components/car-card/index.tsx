@@ -53,7 +53,7 @@ const CarCard: FC<ICarCard> = ({
           </div>
           <div className={style.rightInfo}>
             <span>Цена</span>
-            <span>{`${price}₽`}</span>
+            <span>{`${price} ₽`}</span>
           </div>
         </div>
       </div>

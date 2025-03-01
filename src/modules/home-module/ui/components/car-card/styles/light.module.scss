@@ -13,16 +13,24 @@
 
   .photoWrapper {
     width: 100%;
-    height: 374px;
+    aspect-ratio: 1/0.8;
 
-    padding: 0.5rem 1rem;
+    padding: 0.7rem 1rem;
 
     .available {
       @include text_s($gray_0);
+
+      @include xs {
+        @include text_xs_mobile($gray_0);
+      }
     }
 
     .unavailable {
       @include text_s($gray_200);
+
+      @include xs {
+        @include text_xs_mobile($gray_200);
+      }
     }
   }
 
@@ -39,9 +47,23 @@
 
       & :nth-child(1) {
         @include h4($gray_450);
+
+        @include md {
+          @include h5_meduim($gray_450);
+        }
+        @include xs {
+          @include h7($gray_450);
+        }
       }
       & :nth-child(2) {
         @include h6($gray_450);
+
+        @include md {
+          @include h8_regular($gray_450);
+        }
+        @include xs {
+          @include text_l($gray_450);
+        }
       }
 
       .link {
@@ -65,9 +87,28 @@
       @include flexRowConstructor(start, start);
       width: 100%;
 
+      & > div :nth-child(1) {
+        @include text_m_regular($gray_300);
+        text-wrap: nowrap;
+
+        @include md {
+          @include text_s($gray_300);
+        }
+        @include xs {
+          @include text_xs_mobile($gray_300);
+        }
+      }
+      & > div :nth-child(2) {
+        @include h7($gray_450);
+
+        @include md {
+          @include h8_regular($gray_450);
+        }
+      }
+
       .leftInfo {
         @include flexColumnConstructor(start, start, 0.25rem);
-        width: 150px;
+        width: 180px;
         border-right: 1px solid $gray_100;
         padding: 0.75rem 1.5rem 0rem 0rem;
       }

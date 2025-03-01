@@ -20,7 +20,12 @@ const About = () => {
           </span>
         </div>
         <div className={style.logo}>
-          <img className={style.logoImg} src={LogoIMG} alt="Lali Motors Logo" />
+          <img
+            className={style.logoImg}
+            src={LogoIMG}
+            loading="lazy"
+            alt="Lali Motors Logo"
+          />
           <div className={style.infoContainer}>
             <span>LALI MOTORS</span>
             <span>Основатели компании</span>

@@ -62,17 +62,6 @@ const Reviews = () => {
               />
             );
           })}
-          {/* <>
-            <div className={style.flame1}>
-              <Star width={29} />
-            </div>
-            <div className={style.flame2}>
-              <Star width={29} />
-            </div>
-            <div className={style.flame3}>
-              <Star width={29} />
-            </div>
-          </> */}
         </div>
       </div>
     </div>

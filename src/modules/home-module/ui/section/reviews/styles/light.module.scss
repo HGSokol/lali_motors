@@ -41,41 +41,11 @@
 
     .cardContainer {
       @include flexRowConstructor(start, start);
-      position: relative;
       flex-wrap: wrap;
 
       @include md {
         justify-content: center;
       }
-
-      // .flame1,
-      // .flame2,
-      // .flame3,
-      // .flame4,
-      // .flame5 {
-      //   z-index: 20;
-      //   position: absolute;
-      // }
-      // .flame1 {
-      //   top: -6px;
-      //   right: -8px;
-      // }
-      // .flame2 {
-      //   top: 2px;
-      //   right: 26px;
-      // }
-      // .flame3 {
-      //   top: -4px;
-      //   right: 64px;
-      // }
-      // .flame4 {
-      //   top: -5px;
-      //   right: 123px;
-      // }
-      // .flame4 {
-      //   top: -5px;
-      //   right: 123px;
-      // }
     }
   }
 }

@@ -9,6 +9,9 @@
   @include lg {
     max-width: 732px;
   }
+  @include lg {
+    padding: 0;
+  }
   textarea,
   input {
     border-bottom: 1px solid $gray_250;

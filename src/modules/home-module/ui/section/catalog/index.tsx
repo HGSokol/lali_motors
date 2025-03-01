@@ -82,7 +82,7 @@ const carData = [
     id: 9,
     brand: "Mercedes-Benz",
     model: "BRABUS Timotue G800",
-    isAvailable: true,
+    isAvailable: false,
     price: "32500000",
     year: "2024",
     photoUrl: "",

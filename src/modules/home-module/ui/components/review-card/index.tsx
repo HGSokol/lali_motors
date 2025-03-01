@@ -34,6 +34,7 @@ const ReviewCard: FC<IReviewCard> = ({
         src={`${image || defaultCardImg}`}
         className={style.cardImage}
         alt={`car-image-${user}`}
+        loading="lazy"
       />
       <div className={style.infoWrapper}>
         <div className={style.infoDescription}>
