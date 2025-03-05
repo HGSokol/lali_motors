@@ -3,6 +3,10 @@
   font-family: "Inter";
   src: url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
 }
+@font-face {
+  font-family: "Open Sans";
+  src: url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap");
+}
 
 @mixin fontConstructor(
   $size: 1,
@@ -142,4 +146,10 @@
   @include fontConstructor(1, 400, $color);
   line-height: 25.2px;
   letter-spacing: -0.54px;
+}
+@mixin openSans($color: $gray_300) {
+  @include fontConstructor(0.75, 400, $color);
+  font-family: "Inter", sans-serif;
+  line-height: 150%;
+  letter-spacing: -0.03em;
 }

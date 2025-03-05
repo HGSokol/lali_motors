@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import CarCard from "~/modules/home-module/ui/components/car-card";
 
 import ArrowDown from "~/common/icons/arrow-down";
@@ -90,6 +91,29 @@ const carData = [
 ];
 
 const Catalog = () => {
+  const [data, setData] = useState(() => carData);
+  const [loading, setLoading] = useState(false);
+
+  useEffect(() => {
+    (async () => {
+      if (loading) {
+        try {
+          const responce = await fetch("");
+          if (responce.ok) {
+            setData((prev) => [
+              ...prev,
+              // responce.data
+            ]);
+          }
+        } catch (error) {
+          console.log(error);
+        } finally {
+          setLoading(false);
+        }
+      }
+    })();
+  }, [loading]);
+
   return (
     <div id="Каталог" className={style.catalogWrapper}>
       <div className={style.catalog}>
@@ -106,7 +130,7 @@ const Catalog = () => {
             </span>
           </div>
           <div className={style.catalogContainer}>
-            {carData.map((e) => {
+            {data.map((e) => {
               return (
                 <CarCard
                   key={e.id}
@@ -122,7 +146,7 @@ const Catalog = () => {
           </div>
         </div>
       </div>
-      <div className={style.loadBlock}>
+      <div className={style.loadBlock} onClick={() => setLoading(true)}>
         <div className={style.content}>
           <span>Загрузить еще каталог</span>
           <ArrowDown />

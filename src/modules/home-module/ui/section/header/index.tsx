@@ -1,5 +1,6 @@
-import { Fragment, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import Logo from "~/modules/home-module/ui/components/logo";
+import ContactForm from "~/modules/home-module/ui/components/contact-form";
 
 import ArrowLink from "~/common/icons/arrow-link";
 import Flame from "~/common/icons/flame";
@@ -28,9 +29,10 @@ const isCurrentList = (
 
 const Header = () => {
   const [menu, setMenu] = useState(false);
+  const [contactForm, setContactForm] = useState(false);
 
   useEffect(() => {
-    if (menu) {
+    if (menu || contactForm) {
       document.body.style.overflow = "hidden";
     } else {
       document.body.style.overflow = "";
@@ -39,7 +41,7 @@ const Header = () => {
     return () => {
       document.body.style.overflow = "";
     };
-  }, [menu]);
+  }, [menu, contactForm]);
 
   const filterList = linkList.filter((e) => !e.includes("+"));
 
@@ -52,11 +54,15 @@ const Header = () => {
             +7 495 888-76-54
           </a>
         </div>
-
         <ul className={style.rightSide}>
           {filterList.map((e, i) => {
             return (
-              <Fragment key={`${e}-${i}`}>
+              <div
+                key={`${e}-${i}`}
+                onClick={() =>
+                  filterList.length == i + 1 && setContactForm(true)
+                }
+              >
                 <li
                   className={
                     isCurrentList(filterList, i, [
@@ -98,7 +104,7 @@ const Header = () => {
                     ]) as React.ReactNode | string
                   }
                 </>
-              </Fragment>
+              </div>
             );
           })}
         </ul>
@@ -118,7 +124,12 @@ const Header = () => {
             <ul className={style.burgerBody}>
               {linkList.map((e, i) => {
                 return (
-                  <Fragment key={i}>
+                  <div
+                    key={i}
+                    onClick={() =>
+                      linkList.length == i + 1 && setContactForm(true)
+                    }
+                  >
                     <li
                       className={
                         isCurrentList(linkList, i, [
@@ -155,10 +166,20 @@ const Header = () => {
                         }
                       </a>
                     </li>
-                  </Fragment>
+                  </div>
                 );
               })}
             </ul>
+          </div>
+        )}
+        {contactForm && (
+          <div
+            onClick={(e) =>
+              e.target === e.currentTarget && setContactForm((prev) => !prev)
+            }
+            className={style.contactFormContainer}
+          >
+            <ContactForm setContactForm={setContactForm} />
           </div>
         )}
       </div>

@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 import ArrowRight from "~/common/icons/arrow-right";
 import Flame from "~/common/icons/flame";
@@ -8,6 +8,7 @@ import CarImg2 from "~/common/assets/car_2.webp";
 import CarImg3 from "~/common/assets/car_3.webp";
 import CarImg4 from "~/common/assets/car_4.webp";
 import style from "./styles/light.module.scss";
+import ContactForm from "../../components/contact-form";
 
 const tableData = [
   {
@@ -53,6 +54,20 @@ const carData = [
 
 const Service = () => {
   const [hoveredRow, setHoveredRow] = useState<number>(1);
+  const [contactForm, setContactForm] = useState(false);
+
+  useEffect(() => {
+    if (contactForm) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [contactForm]);
+
   return (
     <div id="Услуги" className={style.service}>
       <div className={style.sectionContainer}>
@@ -124,7 +139,9 @@ const Service = () => {
               })}
             </div>
             <div className={style.serviceButton}>
-              <a href="#Оставить заявку">Оставить заявку</a>
+              <a href="#Оставить заявку" onClick={() => setContactForm(true)}>
+                Оставить заявку
+              </a>
               <ArrowRight />
               <div className={style.flame1}>
                 <Flame width={15} />
@@ -139,6 +156,16 @@ const Service = () => {
           </div>
         </div>
       </div>
+      {contactForm && (
+        <div
+          onClick={(e) =>
+            e.target === e.currentTarget && setContactForm((prev) => !prev)
+          }
+          className={style.contactFormContainer}
+        >
+          <ContactForm setContactForm={setContactForm} />
+        </div>
+      )}
     </div>
   );
 };

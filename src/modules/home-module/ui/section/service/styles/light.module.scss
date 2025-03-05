@@ -259,6 +259,10 @@
             position: relative;
           }
 
+          & > a {
+            text-decoration: none;
+          }
+
           .flame1,
           .flame2,
           .flame3 {
@@ -310,5 +314,19 @@
         }
       }
     }
+  }
+
+  .contactFormContainer {
+    @include flexRowConstructor(center, center);
+    z-index: 100;
+
+    position: fixed;
+    width: 100vw;
+    height: 100dvh;
+
+    top: 0;
+    left: 0;
+
+    background: rgba(14, 14, 15, 0.9);
   }
 }

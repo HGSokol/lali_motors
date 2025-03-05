@@ -1,4 +1,4 @@
-import ContactForm from "~/modules/home-module/ui/components/contact-form";
+import FaqForm from "~/modules/home-module/ui/components/faq-form";
 
 import Flame from "~/common/icons/flame";
 
@@ -27,7 +27,7 @@ const Contact = () => {
             ответы!
           </span>
         </div>
-        <ContactForm />
+        <FaqForm />
       </div>
     </div>
   );
